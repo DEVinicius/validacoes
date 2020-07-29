@@ -27,6 +27,24 @@ class Validation{
         }
         return true;  
     }
+    public function cepValidation(string $cep)
+    {
+        
+        // retira espacos em branco
+        $cep = trim($cep);
+        // expressao regular para avaliar o cep
+        $avaliaCep = ereg("^[0-9]{5}-[0-9]{3}$", $cep);
+        
+        // verifica o resultado
+        if(!$avaliaCep) {            
+            echo "CEP nao Valido";
+        }
+        else
+        {
+            echo "CEP Valido";
+        }
+        
+    }
 
     public function cnpjValidation(string $cnpj):bool{
         
